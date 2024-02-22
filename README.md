@@ -12,7 +12,8 @@ Your challenge is to develop the backend using MongoDB as the database and estab
 2. **Express.js Server**: Create an Express.js server to handle HTTP requests and responses.
 3. **RESTful API**: Implement RESTful API endpoints to perform Read operation for products.
 4. **Connect to Frontend**: Ensure that the frontend can make requests to the backend to fetch product data.
-5. **Docker: Optionally, you can containerize your backend application using Docker for easier deployment.
+5. **Docker**: Optionally, you can containerize your backend application using Docker for easier deployment.
+6. **Flexible Backend Structure**: You have the flexibility to structure the backend as you see fit. You can choose the folder structure, naming conventions.
 
 ### Frontend Requirements:
 
