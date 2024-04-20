@@ -1,4 +1,4 @@
-import { IProduct } from '../interfaces/product';
+import { IProduct } from '../interfaces/product'
 
 export const mockData: IProduct[] = [
   {
@@ -142,4 +142,4 @@ export const mockData: IProduct[] = [
       validTo: new Date('2021-12-31'),
     },
   },
-];
+]

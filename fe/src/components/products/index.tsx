@@ -1,35 +1,38 @@
-import { mockData } from '../../mock/data';
-import { ProductCard } from '../cards/Product';
-import { Button } from '../button';
-import { useFilterContext } from '../../contexts/filters';
-import { ChevronDown } from 'react-feather';
+import { ChevronDown } from 'react-feather'
+
+import { useFilterContext } from '../../contexts/filters'
+import { mockData } from '../../mock/data'
+import { Button } from '../button'
+import { ProductCard } from '../cards/Product'
 
 export const Products = () => {
-  const { filters, query } = useFilterContext();
+  const { filters, query } = useFilterContext()
 
   const searchByCode = mockData.filter((product) => {
-    return product.code.toLowerCase().includes(query.toLowerCase());
-  });
+    return product.code.toLowerCase().includes(query.toLowerCase())
+  })
 
   const filteredProducts = searchByCode.filter((product) => {
     if (filters.capacity && product.capacity !== filters.capacity) {
-      return false;
+      return false
     }
     if (filters.energyClass && product.energyClass !== filters.energyClass) {
-      return false;
+      return false
     }
-    return !(filters.feature && !product.features.includes(filters.feature));
-  });
+
+    return !(filters.feature && !product.features.includes(filters.feature))
+  })
 
   const sortedProducts = filteredProducts.sort((a, b) => {
     if (filters.sort === 'price') {
-      return a.price.value - b.price.value;
+      return a.price.value - b.price.value
     }
     if (filters.sort === 'capacity') {
-      return a.capacity - b.capacity;
+      return a.capacity - b.capacity
     }
-    return 0;
-  });
+
+    return 0
+  })
 
   if (filteredProducts.length === 0) {
     return (
@@ -38,7 +41,7 @@ export const Products = () => {
           Brak produktów spełniających kryteria wyszukiwania
         </p>
       </div>
-    );
+    )
   }
 
   return (
@@ -57,5 +60,5 @@ export const Products = () => {
         />
       </div>
     </>
-  );
-};
+  )
+}

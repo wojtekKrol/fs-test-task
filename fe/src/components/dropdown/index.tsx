@@ -1,28 +1,29 @@
-import { Fragment, useState } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { FiltersContextType, useFilterContext } from '../../contexts/filters';
-import { ChevronDown } from 'react-feather';
+import { Listbox, Transition } from '@headlessui/react'
+import { Fragment, useState } from 'react'
+import { ChevronDown } from 'react-feather'
+
+import { FiltersContextType, useFilterContext } from '../../contexts/filters'
 
 export interface DropdownOption {
-  name: FiltersContextType['filters'][keyof FiltersContextType['filters']];
-  title?: string;
+  name: FiltersContextType['filters'][keyof FiltersContextType['filters']]
+  title?: string
 }
 
 interface DropdownProps {
-  options: DropdownOption[];
-  filter: keyof FiltersContextType['filters'];
+  options: DropdownOption[]
+  filter: keyof FiltersContextType['filters']
 }
 
 export const Dropdown = ({ options, filter }: DropdownProps) => {
-  const { setFilters, filters } = useFilterContext();
-  const [selected, setSelected] = useState<DropdownOption>({ name: filters[filter] });
+  const { setFilters, filters } = useFilterContext()
+  const [selected, setSelected] = useState<DropdownOption>({ name: filters[filter] })
 
   const handleChange = (option: DropdownOption) => {
-    setSelected(option);
-    setFilters({ ...filters, [filter]: option.name });
-  };
+    setSelected(option)
+    setFilters({ ...filters, [filter]: option.name })
+  }
 
-  const selectedTitle = selected.title || selected.name || 'Pokaż wszystkie';
+  const selectedTitle = selected.title || selected.name || 'Pokaż wszystkie'
 
   return (
     <div>
@@ -66,5 +67,5 @@ export const Dropdown = ({ options, filter }: DropdownProps) => {
         </div>
       </Listbox>
     </div>
-  );
-};
+  )
+}

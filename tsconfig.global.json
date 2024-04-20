@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": ".",
+    "tsBuildInfoFile": "node_modules/.cache/global.tsbuildinfo"
+  },
+  "references": [
+    {
+      "path": "./be/tsconfig.json"
+    },
+    {
+      "path": "./fe/tsconfig.json"
+    }
+  ],
+  "files": [],
+  "include": [],
+  "exclude": ["**/node_modules"]
+}

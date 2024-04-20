@@ -1,8 +1,8 @@
-import classNames from 'classnames';
+import classNames from 'classnames'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'primary' | 'secondary' | 'tertiary';
-  icon?: React.ReactNode;
+  variant: 'primary' | 'secondary' | 'tertiary'
+  icon?: React.ReactNode
 }
 
 export const Button = ({ variant, value, className, icon, onClick }: ButtonProps) => {
@@ -22,5 +22,5 @@ export const Button = ({ variant, value, className, icon, onClick }: ButtonProps
       <span>{value}</span>
       <span>{icon}</span>
     </button>
-  );
-};
+  )
+}

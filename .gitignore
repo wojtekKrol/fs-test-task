@@ -27,6 +27,7 @@ yarn-error.log*
 
 # Ignore any compiled TypeScript or JavaScript files
 *.js
+!.lintstagedrc.js
 *.map
 
 # Ignore any dependencies' lock files

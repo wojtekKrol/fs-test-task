@@ -1,2 +1,16 @@
-version: '3'
-# your services for the task
+version: '3.8'
+services:
+  backend:
+    build: ./be
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./be:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'

@@ -1,0 +1,25 @@
+{
+  "name": "be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Wojtas",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "lint": "yarn lint:fix && yarn lint:check",
+    "lint:fix": "yarn lint:format && yarn lint:fix:code",
+    "lint:format": "prettier --write --ignore-unknown .",
+    "lint:fix:code": "eslint --fix .",
+    "lint:check": "yarn lint:code && yarn lint:text",
+    "lint:code": "eslint --cache --cache-location node_modules/.cache/eslint --cache-strategy content --ext .ts .",
+    "lint:text": "prettier --check \"**/*.{json,md,mdx,yml}\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

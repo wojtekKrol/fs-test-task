@@ -1,20 +1,20 @@
-import { Dropdown, DropdownOption } from '../dropdown';
-import { Search } from '../search';
+import { Dropdown, DropdownOption } from '../dropdown'
+import { Search } from '../search'
 
 const sortOptions: DropdownOption[] = [
   { name: 'price', title: 'Cena' },
   { name: 'capacity', title: 'Pojemność' },
-];
+]
 
 const featuresOptions: DropdownOption[] = [
   { name: 'Panel AI Control' },
   { name: 'Silnik inwerterowy' },
   { name: 'Wyświetlacz elektroniczny' },
-];
+]
 
-const energyClassOptions: DropdownOption[] = [{ name: 'A' }, { name: 'B' }, { name: 'C' }];
+const energyClassOptions: DropdownOption[] = [{ name: 'A' }, { name: 'B' }, { name: 'C' }]
 
-const capacityOptions: DropdownOption[] = [{ name: 8 }, { name: 9 }, { name: 10.5 }];
+const capacityOptions: DropdownOption[] = [{ name: 8 }, { name: 9 }, { name: 10.5 }]
 
 export const Filters = () => {
   return (
@@ -41,5 +41,5 @@ export const Filters = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

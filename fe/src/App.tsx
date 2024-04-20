@@ -1,6 +1,6 @@
-import { Products } from './components/products';
-import { Filters } from './components/filters';
-import { FiltersProvider } from './contexts/filters';
+import { Filters } from './components/filters'
+import { Products } from './components/products'
+import { FiltersProvider } from './contexts/filters'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         </FiltersProvider>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
