@@ -3,7 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "description": "Full Stack Test Task",
-  "type": "module",
   "scripts": {
     "postinstall": "husky",
     "seed": "yarn workspace be seed",
