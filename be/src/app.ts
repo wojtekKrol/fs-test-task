@@ -11,7 +11,7 @@ dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 5500
-console.log(process.env.PORT)
+
 // Middleware
 app.use(cors())
 app.use(
