@@ -2,8 +2,10 @@
 node_modules/
 
 # Ignore any build output
-build
-dist
+build/
+
+# Ignore dist directories for backend
+be/dist/
 
 # Ignore environment files
 .env
@@ -18,19 +20,13 @@ yarn-error.log*
 # Ignore IDE files
 .idea/
 .vscode/
-
-# Ignore any local configuration specific to developer machines
-/.env.local
-/.env.development.local
-/.env.test.local
-/.env.production.local
+.DS_Store
 
 # Ignore any compiled TypeScript or JavaScript files
 *.js
-!.lintstagedrc.js
 *.map
+!.lintstagedrc.js
 
 # Ignore any dependencies' lock files
 package-lock.json
 yarn.lock
-

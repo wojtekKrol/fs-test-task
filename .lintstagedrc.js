@@ -1,11 +1,8 @@
 module.exports = {
-  // Type check TypeScript files
-  '**/*.(ts)': () => 'yarn tsc --noEmit',
-
-  // Lint & Prettify TS files
-  '**/*.{ts,tsx}': filenames => [
-    `yarn eslint --fix ${filenames.join(' ')}`,
-    `yarn prettier --write ${filenames.join(' ')}`,
+  "*/**/*.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint --fix",
+    "eslint"
   ],
 
   // Prettify only Markdown and JSON files
