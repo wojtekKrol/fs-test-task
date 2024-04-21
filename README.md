@@ -1,3 +1,10 @@
+# How to test
+
+1. run `yarn install`
+2. Run fixtures seed: `yarn seed`
+3. Run client side: `yarn dev:fe`
+4. Run server side in docker: 
+
 # Recruitment Full Stack Test Task
 
 Welcome to the Recruitment Full Stack Test Task! This task is designed to assess your skills in building a full-stack application where you'll create the backend using MongoDB as the database and connect it to the frontend located in the 'fe' folder of this repository.

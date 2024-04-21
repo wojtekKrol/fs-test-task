@@ -18,5 +18,8 @@
     "baseUrl": "./src",
     "types": ["node"]
   },
+  "ts-node": {
+    "esm": true
+  },
   "include": ["**/*.ts"]
 }
