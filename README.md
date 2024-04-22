@@ -1,9 +1,9 @@
 # How to test
 
 1. run `yarn install`
-2. Run fixtures seed: `yarn seed`
-3. Run client side: `yarn dev:fe`
-4. Run server side in docker: 
+2. Run fixtures seed: `yarn run seed`
+3. Run client side: `yarn run dev:fe`
+4. Run server side in docker: `docker-compose up --build`
 
 # Recruitment Full Stack Test Task
 

@@ -1,16 +1,28 @@
-version: '3.8'
+version: "3.8"
+
 services:
-  backend:
-    build: ./be
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - '5000:5000'
-    volumes:
-      - ./be:/usr/src/app
+      - "5500:5500"
+    networks:
+      local:
     environment:
-      - NODE_ENV=development
-    depends_on:
-      - mongo
+      DB_ADDRESS: "mongodb://mongo:27017/cheil"
   mongo:
     image: mongo
-    ports:
-      - '27017:27017'
+    volumes:
+      - db:/data/db
+    networks:
+      local:
+        aliases:
+          - mongo
+
+
+networks:
+  local:
+
+volumes:
+  db:
