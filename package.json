@@ -2,7 +2,6 @@
   "name": "fs-test-task",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
   "description": "Full Stack Test Task",
   "scripts": {
     "postinstall": "husky",
