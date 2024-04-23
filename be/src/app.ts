@@ -34,8 +34,8 @@ app.get('/health', (req, res) => {
   console.log(chalk.green(`${figures.tick} Health check passed`))
 })
 
-const databaseURL = 'mongodb://localhost:27017/cheil'
-
+const databaseURL = process.env.DB_ADDRESS || 'mongodb://localhost:27017/cheil'
+console.log(chalk.blue(`Connecting to MongoDB at ${databaseURL}`))
 // MongoDB Connection
 mongoose
   .connect(databaseURL, { autoIndex: true, autoCreate: true })

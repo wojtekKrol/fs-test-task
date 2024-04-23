@@ -28,4 +28,4 @@ COPY --from=nodeDeps /app/be/dist .
 COPY --from=nodeDeps /app/be/package.json .
 COPY --from=nodeDeps /app/node_modules ./node_modules
 
-CMD ["tini", "--", "node", "src/app.js"]
+CMD ["tini", "--", "node", "--experimental-specifier-resolution=node", "src/app.js"]

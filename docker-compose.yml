@@ -11,6 +11,7 @@ services:
       local:
     environment:
       DB_ADDRESS: "mongodb://mongo:27017/cheil"
+
   mongo:
     image: mongo
     volumes:
@@ -20,6 +21,17 @@ services:
         aliases:
           - mongo
 
+  mongo-restore:
+    image: mongo
+    volumes:
+      - ./mongodump:/dump
+      - db:/data/db
+    command:
+      /bin/sh -c "mongorestore --uri 'mongodb://mongo:27017' /dump && echo 'MongoDB Restore Complete'"
+    depends_on:
+      - mongo
+    networks:
+      local:
 
 networks:
   local:
