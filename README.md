@@ -8,12 +8,17 @@ Ensure you have `node` >18 `yarn` installed on your system, which you can get fr
 
 ## Local Setup
 
-### 1. Install Dependencies
+### 0. Install Dependencies
 
 Before running the application, install the necessary dependencies:
 
 ```bash
 yarn install
+```
+### 1. Configure Environment Variables
+
+```bash
+cd be && ./scripts/createEnvs.sh &&  cd ..
 ```
 
 ### 2. Seed the Database
