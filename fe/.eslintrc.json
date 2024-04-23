@@ -10,7 +10,10 @@
   "overrides": [
     {
       // enable eslint-plugin-testing-library rules or preset only for matching files!
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
       "extends": [
         "plugin:jest/recommended",
         "plugin:jest-dom/recommended",
@@ -20,7 +23,10 @@
     {
       "files": ["**/*.ts?(x)"],
       "parser": "@typescript-eslint/parser",
-      "extends": ["plugin:@typescript-eslint/recommended", "plugin:import/typescript"]
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript"
+      ]
     }
   ],
   "rules": {},

@@ -35,7 +35,11 @@ export const mockData: IProduct[] = [
     color: 'biała',
     capacity: 10.5,
     dimensions: '55 x 60 x 85 cm',
-    features: ['Panel AI Control', 'Silnik inwerterowy', 'Wyświetlacz elektroniczny'],
+    features: [
+      'Panel AI Control',
+      'Silnik inwerterowy',
+      'Wyświetlacz elektroniczny',
+    ],
     energyClass: 'A',
     price: {
       value: 1999.2,
@@ -129,7 +133,11 @@ export const mockData: IProduct[] = [
     color: 'biała',
     capacity: 8,
     dimensions: '55 x 60 x 85 cm',
-    features: ['Drzwi AddWash™', 'Panel AI Control', 'Wyświetlacz elektroniczny'],
+    features: [
+      'Drzwi AddWash™',
+      'Panel AI Control',
+      'Wyświetlacz elektroniczny',
+    ],
     energyClass: 'B',
     price: {
       value: 1999.0,

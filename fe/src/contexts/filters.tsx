@@ -1,4 +1,10 @@
-import { createContext, PropsWithChildren, useContext, useMemo, useState } from 'react'
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 
 import { Capacity, EnergyClass, Features } from '../interfaces/product'
 
@@ -47,7 +53,9 @@ export const FiltersProvider = ({ children }: PropsWithChildren) => {
     [query, filters]
   )
 
-  return <FiltersContext.Provider value={value}>{children}</FiltersContext.Provider>
+  return (
+    <FiltersContext.Provider value={value}>{children}</FiltersContext.Provider>
+  )
 }
 
 export const useFilterContext = () => {
