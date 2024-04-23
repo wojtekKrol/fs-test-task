@@ -1,30 +1,32 @@
-import { IProduct } from '../../../../../types/product'
-import { useCartContext } from '../../../contexts/cart'
-import { parseCurrency } from '../../../utils/parseCurrency'
-import { EnergyBadge } from '../../badge/Energy'
-import { Button } from '../../button'
+import { useCartContext } from '../../../contexts/cart';
+import { IProduct } from '../../../interfaces/product';
+import { parseCurrency } from '../../../utils/parseCurrency';
+import { EnergyBadge } from '../../badge/Energy';
+import { Button } from '../../button';
 
 export const ProductCard = (props: IProduct) => {
-  const { items, setItems } = useCartContext()
-  const { code, name, capacity, color, dimensions, features, energyClass, price, image } = props
-  const { value, currency, installment, validTo, validFrom } = price
-  const parseTitle = `${code}, ${name}, ${capacity}kg, ${color}`
-  const parseFeatures = features.join(', ')
+  const { items, setItems } = useCartContext();
+  const { code, name, capacity, color, dimensions, features, energyClass, price, image } = props;
+  const { value, currency, installment, validTo, validFrom } = price;
+  const parseTitle = `${code}, ${name}, ${capacity}kg, ${color}`;
+  const parseFeatures = features.join(', ');
+  const validFromDate = new Date(validFrom);
+  const validToDate = new Date(validTo);
 
   const addToCart = (product: IProduct) => {
-    setItems([...items, product])
-  }
+    setItems([...items, product]);
+  };
 
   const removeFromCart = (product: IProduct) => {
-    const filteredItems = items.filter((item) => item.code !== product.code)
-    setItems(filteredItems)
-  }
+    const filteredItems = items.filter((item) => item.code !== product.code);
+    setItems(filteredItems);
+  };
 
-  const isInCart = items.some((item) => item.code === code)
+  const isInCart = items.some((item) => item.code === code);
 
   const handleAddToCart = () => {
-    isInCart ? removeFromCart(props) : addToCart(props)
-  }
+    isInCart ? removeFromCart(props) : addToCart(props);
+  };
 
   return (
     <div className="flex flex-col bg-white rounded-2xl p-6">
@@ -46,7 +48,8 @@ export const ProductCard = (props: IProduct) => {
         <EnergyBadge energyClass={energyClass} />
       </div>
       <p className="text-xs text-gray-500">
-        Cena obowiązuje od {validFrom.toLocaleDateString()} do {validTo.toLocaleDateString()}
+        Cena obowiązuje od {validFromDate.toLocaleDateString()} do{' '}
+        {validToDate.toLocaleDateString()}
       </p>
       <div className="mb-3 flex items-center gap-x-1">
         <h5 className="text-4xl text-black font-bold">{parseCurrency(value).unit}</h5>
@@ -68,5 +71,5 @@ export const ProductCard = (props: IProduct) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};

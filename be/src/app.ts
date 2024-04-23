@@ -7,6 +7,8 @@ import helmet from 'helmet'
 import { StatusCodes } from 'http-status-codes'
 import mongoose from 'mongoose'
 
+import productRouter from './routes/productRouter'
+
 dotenv.config()
 
 const app = express()
@@ -43,6 +45,9 @@ mongoose
       chalk.red(`${figures.cross} MongoDB connection error: ${err}`)
     )
   )
+
+// Routes
+app.use('/products', productRouter)
 
 // Start the server
 app.listen(port, () => {

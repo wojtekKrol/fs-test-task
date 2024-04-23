@@ -1,38 +1,61 @@
-import { ChevronDown } from 'react-feather'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { ChevronDown } from 'react-feather';
 
-import { useFilterContext } from '../../contexts/filters'
-import { mockData } from '../../mock/data'
-import { Button } from '../button'
-import { ProductCard } from '../cards/Product'
+import { useFilterContext } from '../../contexts/filters';
+import { IProduct } from '../../interfaces/product';
+import { Button } from '../button';
+import { ProductCard } from '../cards/Product';
 
 export const Products = () => {
-  const { filters, query } = useFilterContext()
+  const { filters, query } = useFilterContext();
+  // Render products or loading state
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  const searchByCode = mockData.filter((product) => {
-    return product.code.toLowerCase().includes(query.toLowerCase())
-  })
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const { data } = await axios.get<IProduct[]>('http://localhost:5500/products');
+        setProducts(data);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const searchByCode = products.filter((product) => {
+    return product.code.toLowerCase().includes(query.toLowerCase());
+  });
 
   const filteredProducts = searchByCode.filter((product) => {
     if (filters.capacity && product.capacity !== filters.capacity) {
-      return false
+      return false;
     }
     if (filters.energyClass && product.energyClass !== filters.energyClass) {
-      return false
+      return false;
     }
 
-    return !(filters.feature && !product.features.includes(filters.feature))
-  })
+    return !(filters.feature && !product.features.includes(filters.feature));
+  });
 
   const sortedProducts = filteredProducts.sort((a, b) => {
     if (filters.sort === 'price') {
-      return a.price.value - b.price.value
+      return a.price.value - b.price.value;
     }
     if (filters.sort === 'capacity') {
-      return a.capacity - b.capacity
+      return a.capacity - b.capacity;
     }
 
-    return 0
-  })
+    return 0;
+  });
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   if (filteredProducts.length === 0) {
     return (
@@ -41,7 +64,7 @@ export const Products = () => {
           Brak produktów spełniających kryteria wyszukiwania
         </p>
       </div>
-    )
+    );
   }
 
   return (
@@ -56,9 +79,9 @@ export const Products = () => {
           variant={'tertiary'}
           value={'Pokaż więcej'}
           icon={<ChevronDown />}
-          onClick={() => console.log('some action')}
+          onClick={() => {}}
         />
       </div>
     </>
-  )
-}
+  );
+};

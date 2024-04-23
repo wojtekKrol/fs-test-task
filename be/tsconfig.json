@@ -16,7 +16,7 @@
     "isolatedModules": false,
     "noEmit": false,
     "baseUrl": "./src",
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
   "ts-node": {
     "esm": true

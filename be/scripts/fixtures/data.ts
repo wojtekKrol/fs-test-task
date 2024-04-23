@@ -1,5 +1,5 @@
-import { IPricing } from '../../types/Pricing'
-import { IProduct } from '../../types/Product'
+import { IPricing } from '../../types/models/PricingModel'
+import { IProduct } from '../../types/models/ProductModel'
 
 type Product = IProduct & { price: Omit<IPricing, 'productCode'> }
 export const mockData: Product[] = [

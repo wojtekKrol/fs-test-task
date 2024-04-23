@@ -1,6 +1,6 @@
 import mongoose, { Document } from 'mongoose'
 
-import { IPricing } from '../../types/Pricing'
+import { IPricing } from '../../types/models/PricingModel'
 
 interface PricingDocument extends IPricing, Document {}
 

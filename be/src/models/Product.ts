@@ -1,6 +1,6 @@
 import mongoose, { Document } from 'mongoose'
 
-import { IProduct } from '../../types/Product'
+import { IProduct } from '../../types/models/ProductModel'
 
 interface ProductDocument extends IProduct, Document {}
 
