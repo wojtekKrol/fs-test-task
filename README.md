@@ -67,5 +67,6 @@ Currently, the application's tests are not configured to work with the TypeScrip
 
 ## Additional Information
 
-- **Client-Side Configuration**: The frontend part of the project was not fully configured. Specifically, Tailwind CSS was not set up, and it’s unclear if this was intentional. I've made necessary adjustments to ensure the project works but have not reconfigured Tailwind CSS.
+- **Client-Side Configuration**: The frontend part of the project was not fully configured. Specifically, Tailwind CSS was not set up, and it’s unclear if this was intentional. I've made necessary adjustments to ensure the project works by adding  Tailwind CSS configs.
 - **Project Structure**: This project uses Yarn workspaces for managing multiple packages, which is not supported by npm. This decision necessitated adjustments in several configuration settings to make the project compatible with Yarn.
+- **Other thoughts**: While working on this projects I reflected on why I didn't use a template for this Express, MongoDB, and TypeScript project from the start, it would be so less work to do. 
