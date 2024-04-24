@@ -37,11 +37,16 @@ Start the client-side application with the following command:
 yarn run dev:fe
 ```
 
-### 4. Run the Backend Server Locally
+### 4. Build and Run the Backend Server Locally
+To build run
 
-To run the backend server locally (outside of Docker), use:
+
+
+To build and run the backend server locally (outside of Docker), use:
 
 ```bash
+yarn workspace be build
+
 yarn run dev:be
 ```
 
